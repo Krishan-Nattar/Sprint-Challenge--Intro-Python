@@ -37,7 +37,7 @@ def cityreader(cities=[]):
         name = row['city']
         lat = row['lat']
         lon = row['lng']
-        cities.append(City(name, lat, lon))
+        cities.append(City(name, float(lat), float(lon)))
     
     return cities
 
@@ -95,10 +95,10 @@ value4 = input("Longitude 2:")
 def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
   # within will hold the cities that fall within the specified region
 
-  min_lat = min(lat1, lat2)
-  max_lat = max(lat1, lat2)
-  min_lon = min(lon1, lon2)
-  max_lon = max(lon1, lon2)
+  min_lat = min(float(lat1), float(lat2))
+  max_lat = max(float(lat1), float(lat2))
+  min_lon = min(float(lon1), float(lon2))
+  max_lon = max(float(lon1), float(lon2))
 
 
 
