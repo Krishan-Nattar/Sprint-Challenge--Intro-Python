@@ -78,12 +78,44 @@ for c in cities:
 
 # TODO Get latitude and longitude values from the user
 
+# Krishan's pseudo-code
+
+# Get latitude and longitude for 2 points from user
+# Find lowest/highest latidude and longitude - sort
+
+# Iterate over each city
+# check if lat/lon is between the given values
+# If so, append
+
+value1 = input("Latitude 1:")
+value2 = input("Longitude 1:")
+value3 = input("Latitude 2:")
+value4 = input("Longitude 2:")
+
 def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
   # within will hold the cities that fall within the specified region
+
+  min_lat = min(lat1, lat2)
+  max_lat = max(lat1, lat2)
+  min_lon = min(lon1, lon2)
+  max_lon = max(lon1, lon2)
+
+
+
+
+
   within = []
+
+  for city in cities:
+    if city.lat >= min_lat and city.lat <= max_lat:
+      if city.lon >= min_lon and city.lon <= max_lon:
+        within.append(city)
+
 
   # TODO Ensure that the lat and lon valuse are all floats
   # Go through each city and check to see if it falls within 
   # the specified coordinates.
 
   return within
+
+cityreader_stretch(value1, value2, value3, value4, cities)
