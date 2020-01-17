@@ -85,4 +85,5 @@ print(g)
 print("Square root of ages:")
 import math
 h = []
+[h.append(math.sqrt(x.age)) for x in humans]
 print(h)
