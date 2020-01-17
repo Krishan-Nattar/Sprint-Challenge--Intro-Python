@@ -31,6 +31,7 @@ print(a)
 
 # Write a list comprehension that creates a list of names of everyone
 # whose name ends in "e".
+
 print("Ends with e:")
 b = []
 [b.append(x.name) for x in humans if x.name[-1] == "e"]
@@ -38,11 +39,20 @@ print(b)
 
 # Write a list comprehension that creates a list of names of everyone
 # whose name starts with any letter between 'C' and 'G' inclusive.
+
+def char_range(c1, c2):
+    for c in range(ord(c1), ord(c2)+1):
+        yield chr(c)
+
 print("Starts between C and G, inclusive:")
 c = []
+[c.append(x.name) for x in humans if x.name[0] in char_range('C', 'G')]
 print(c)
 
 # Write a list comprehension that creates a list of all the ages plus 10.
+
+
+
 print("Ages plus 10:")
 d = []
 print(d)
